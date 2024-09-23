@@ -1,7 +1,8 @@
 import React from 'react';
 import {SafeAreaView, View, Text, Button, StyleSheet, Image, Platform, Dimensions, Appearance} from 'react-native';
+import { router } from 'expo-router';
 
-const userColorScheme = Appearance.getColorScheme();
+export const userColorScheme = Appearance.getColorScheme();
 
 export default function Index() {
     return (
@@ -10,6 +11,9 @@ export default function Index() {
                 style={(Platform.OS === 'ios' || Platform.OS === 'android') ? styles.imagePhone : styles.image}
                 source={require('../assets/images/TouchlineStatsLogo.png')}
             />
+            <Button 
+                title={"Login"}
+                onPress={() => router.push("/login")} />
         </SafeAreaView>
     )
 }
